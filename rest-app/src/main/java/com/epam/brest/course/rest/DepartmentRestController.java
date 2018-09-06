@@ -39,7 +39,7 @@ public class DepartmentRestController {
     //curl -H "Content-Type: application/json" -X POST -d '{"departmentName":"xyz","description":"xyz"}' -v localhost:8088/departments
     @PostMapping(value = "/departments")
     @ResponseStatus(HttpStatus.CREATED)
-    Department addDepartment(@RequestBody Department department) {
+    Integer createDepartment(@RequestBody Department department) {
         LOGGER.debug("create({})", department);
         return departmentService.create(department);
     }

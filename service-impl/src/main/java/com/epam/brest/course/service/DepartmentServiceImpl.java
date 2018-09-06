@@ -28,10 +28,10 @@ public class DepartmentServiceImpl implements DepartmentService {
     }
 
     @Override
-    public Department create(Department department) {
+    public Integer create(Department department) {
+
         LOGGER.debug("create({})", department);
-        department.setDepartmentId(departmentDao.create(department));
-        return department;
+        return departmentDao.create(department);
     }
 
     @Override

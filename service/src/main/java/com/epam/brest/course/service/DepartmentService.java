@@ -24,10 +24,8 @@ public interface DepartmentService {
      * @param department new department
      * @return department with id.
      *
-     * FIXME we dont need full object, check clients for usage with generated id only
      */
-    @Deprecated
-    Department create(final Department department);
+    Integer create(final Department department);
 
     /**
      * Update department.

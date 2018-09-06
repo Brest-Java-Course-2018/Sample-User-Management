@@ -99,7 +99,7 @@ public class DemoApp {
         String desc = sc.next();
 
         Department department = new Department(name, desc);
-        department = departmentService.create(department);
+        department.setDepartmentId(departmentService.create(department));
         System.out.println("department: " + department);
     }
 }

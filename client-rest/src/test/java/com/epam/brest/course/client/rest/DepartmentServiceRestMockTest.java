@@ -83,13 +83,14 @@ public class DepartmentServiceRestMockTest {
 
     @Test
     public void addDepartment() {
-        ResponseEntity entity = new ResponseEntity<>(department, HttpStatus.OK);
+        final Integer id = 3;
+        ResponseEntity entity = new ResponseEntity<>(id, HttpStatus.OK);
         expect(mockRestTemplate.postForEntity(anyString(), anyObject(), anyObject())).andReturn(entity);
         replay(mockRestTemplate);
 
-        Department result = departmentService.create(department);
+        Integer result = departmentService.create(department);
 
         Assert.assertNotNull(result);
-        Assert.assertEquals(3, result.getDepartmentId().intValue());
+        Assert.assertEquals(id, result);
     }
 }
